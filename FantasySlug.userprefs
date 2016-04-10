@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\platform\MovementState.cs">
+    <Files>
+      <File FileName="Assets\scripts\platform\IPlatformState.cs" Line="6" Column="2" />
+      <File FileName="Assets\scripts\platform\MovementState.cs" Line="34" Column="71" />
+      <File FileName="Assets\scripts\platform\StatePatternPlatform.cs" Line="23" Column="2" />
+      <File FileName="Assets\scripts\platform\StationaryState.cs" Line="6" Column="52" />
+      <File FileName="Assets\scripts\player\JumpState.cs" Line="17" Column="3" />
+      <File FileName="Assets\scripts\player\StatePatternPlayer.cs" Line="35" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
