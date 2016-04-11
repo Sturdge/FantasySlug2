@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StatePatternPlayer : MonoBehaviour {
 
+   
     [HideInInspector]
     public IPlayerState currentState;
 
@@ -50,4 +51,9 @@ public class StatePatternPlayer : MonoBehaviour {
 
     }
 
-}
+   
+
+
+   
+
+    }
