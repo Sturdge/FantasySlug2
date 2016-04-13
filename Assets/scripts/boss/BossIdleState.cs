@@ -26,7 +26,7 @@ public class BossIdleState : IBossState {
 
     }
 
-    void updateState()
+    public void updateState()
     {
 
         if (timer < 5)
@@ -67,35 +67,35 @@ public class BossIdleState : IBossState {
 
     }
 
-    void toIdleState()
+    public void toIdleState()
     {
 
         Debug.Log( "BossIdleState.cs: You're already in Idle State!" );
 
     }
 
-    void toAttackState()
+    public void toAttackState()
     {
 
         boss.currentState = boss.attackState;
 
     }
 
-    void toMoveState()
+    public void toMoveState()
     {
 
         boss.currentState = boss.moveState;
 
     }
 
-    void toSpecialState()
+    public void toSpecialState()
     {
 
         boss.currentState = boss.specialState;
 
     }
 
-    void OnTriggerEnter( Collider other )
+    public void OnTriggerEnter(Collider other)
     {
 
 

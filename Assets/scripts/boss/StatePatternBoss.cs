@@ -10,7 +10,7 @@ public class StatePatternBoss : MonoBehaviour {
     public BossIdleState idleState;
 
     [HideInInspector]
-    public BossMoveState moveState;
+    public BossAttackState moveState;
 
     [HideInInspector]
     public BossAttackState attackState;
@@ -22,7 +22,7 @@ public class StatePatternBoss : MonoBehaviour {
     {
 
         idleState = new BossIdleState(this);
-        moveState = new BossMoveState(this);
+        moveState = new BossAttackState(this);
         specialState = new BossSpecialState(this);
         attackState = new BossAttackState(this);
 

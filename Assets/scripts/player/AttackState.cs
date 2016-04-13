@@ -38,13 +38,6 @@ public class AttackState : IPlayerState {
 
     }
 
-    public void toJumpState()
-    {
-
-        player.currentState = player.jumpState;
-
-    }
-
     public void toAttackState()
     {
 

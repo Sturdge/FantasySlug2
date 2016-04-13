@@ -12,8 +12,6 @@ public interface IPlayerState
 
     void toIdleState();
 
-    void toJumpState();
-
     void toAttackState();
 
 }

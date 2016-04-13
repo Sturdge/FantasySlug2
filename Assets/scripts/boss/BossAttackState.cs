@@ -12,15 +12,16 @@ public class BossAttackState : IBossState {
 
     }
 
-    void updateState() { }
+    public void updateState() { }
 
-    void OnTriggerEnter(Collider other) { }
+    public void OnTriggerEnter(Collider other) { }
 
-    void toIdleState() { }
+    public void toIdleState() { }
 
-    void toAttackState() { }
+    public void toAttackState() { }
 
-    void toMoveState() { }
+    public void toMoveState() { }
 
-    void toSpecialState() { }
+    public void toSpecialState() { }
+
 }

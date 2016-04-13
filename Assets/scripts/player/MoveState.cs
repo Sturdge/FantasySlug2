@@ -5,6 +5,8 @@ public class MoveState : IPlayerState {
 
     private readonly StatePatternPlayer player;
 
+    private RaycastHit hit;
+
     public MoveState (StatePatternPlayer statePatternPlayer)
     {
 
@@ -17,11 +19,12 @@ public class MoveState : IPlayerState {
 
         move();
 
+        Debug.DrawLine(player.transform.position, new Vector3( player.transform.position.x, player.transform.position.y -1.25f, player.transform.position.z ), Color.red);
+
     }
 
     public void OnTriggerEnter(Collider other)
     {
-
 
     }
 
@@ -36,13 +39,6 @@ public class MoveState : IPlayerState {
     {
 
         player.currentState = player.idleState;
-
-    }
-
-    public void toJumpState()
-    {
-
-        player.currentState = player.jumpState;
 
     }
 
@@ -67,8 +63,19 @@ public class MoveState : IPlayerState {
             toIdleState();
 
 		if(Input.GetKeyDown (KeyCode.Space))
-		   toJumpState ();
+        {
+
+            if (!player.jumping)
+            {
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * player.jumpforce, ForceMode.Impulse);
+
+                player.jumping = true;
+            }
+
+        }
         
     }
+
+    
 
 }

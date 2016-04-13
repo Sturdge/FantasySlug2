@@ -39,13 +39,6 @@ public class IdleState : IPlayerState {
 
     }
 
-    public void toJumpState()
-    {
-
-        player.currentState = player.jumpState;
-
-    }
-
     public void toAttackState()
     {
 
@@ -61,9 +54,9 @@ public class IdleState : IPlayerState {
         else if (Input.GetKey(KeyCode.D))
             toMoveState();
         else if (Input.GetKey(KeyCode.Space))
-            toJumpState();
-        else if (Input.GetMouseButtonDown(0))
-            toAttackState();
+            toMoveState();
+        //else if (Input.GetMouseButtonDown(0))
+            //toAttackState();
 
     }
 
