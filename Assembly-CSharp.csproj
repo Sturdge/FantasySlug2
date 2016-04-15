@@ -56,6 +56,8 @@
      <Compile Include="Assets\Environment\Water\Water\Scripts\Water.cs" />
      <Compile Include="Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
      <Compile Include="Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\HealthPotion.cs" />
+     <Compile Include="Assets\ManaPotion.cs" />
      <Compile Include="Assets\scripts\GUI\scoreManager.cs" />
      <Compile Include="Assets\scripts\Level scripts\PauseFunction.cs" />
      <Compile Include="Assets\scripts\Main menu UI\Mainmenu.cs" />
@@ -76,10 +78,12 @@
      <Compile Include="Assets\scripts\player\MoveState.cs" />
      <Compile Include="Assets\scripts\player\StatePatternPlayer.cs" />
      <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Hand painted bottle\readme.txt" />
      <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+     <None Include="Assets\PowerUps Vol 1 Free\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>B:/Unity5.1/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
