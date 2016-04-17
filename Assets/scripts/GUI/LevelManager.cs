@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour {
     {
 
 
-        levelText.text = "Level:  " + level; // Set the text to be displayed on screen, 
+        levelText.text = "Level: " + level; // Set the text to be displayed on screen, 
 
 
     }
