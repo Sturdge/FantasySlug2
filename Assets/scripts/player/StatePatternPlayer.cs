@@ -68,7 +68,12 @@ public class StatePatternPlayer : MonoBehaviour {
 
     void OnTriggerEnter( Collider other)
     {
+        if (other.tag == "Death")
+        {
+            Debug.Log("You have fallen to your death");
 
+
+        }
     }
 
 
