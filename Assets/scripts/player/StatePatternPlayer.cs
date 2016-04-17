@@ -25,6 +25,8 @@ public class StatePatternPlayer : MonoBehaviour {
 
     public static int health;
     public static int mana;
+    public static int level;
+   
 
     private void Awake()
     {
@@ -43,6 +45,8 @@ public class StatePatternPlayer : MonoBehaviour {
         currentState = idleState;
         health = 75;
         mana = 75;
+        level = 01;
+      
     }
 
     void Update()

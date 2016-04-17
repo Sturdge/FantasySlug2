@@ -68,7 +68,7 @@ public class MoveState : IPlayerState {
             if (!player.jumping)
             {
                 player.GetComponent<Rigidbody>().AddForce(Vector3.up * player.jumpforce, ForceMode.Impulse);
-
+               
                 player.jumping = true;
             }
 
