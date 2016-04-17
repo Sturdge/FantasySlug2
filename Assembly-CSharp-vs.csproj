@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\3D Assets\Player Character\Test\TestControls.cs" />
+     <Compile Include="Assets\3D Assets\Player Character\TestControls.cs" />
      <Compile Include="Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
