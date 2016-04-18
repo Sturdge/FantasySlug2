@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TestControls : MonoBehaviour {
 
     static Animator anim;
     public float speed = 10.0f;
-  
+    int attackvalue;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +21,7 @@ public class TestControls : MonoBehaviour {
 
 
 
-
+        
         float translation = Input.GetAxis("Vertical") * speed;      
         translation *= Time.deltaTime;   
         transform.Translate(0, 0, translation);
@@ -31,6 +33,51 @@ public class TestControls : MonoBehaviour {
             Debug.Log("The Player has attacked");
             anim.SetBool("isAttacking", true);
             anim.SetBool("isIdle", false);
+           if( anim.GetBool("isAttacking")== true)
+            {
+                float i;
+
+                i = UnityEngine.Random.Range(1f, 3f);
+
+                attackvalue = Convert.ToInt32(i);
+                switch(attackvalue)
+                {
+                    case 1:
+
+                {
+
+                            anim.SetTrigger("isAttack1");
+
+
+                            break;
+
+
+                }
+                    case 2:
+                        {
+
+                            anim.SetTrigger("isAttack2");
+
+
+                            break;
+
+                        }
+                    case 3:
+                        {
+
+                            anim.SetTrigger("isAttack3");
+
+
+
+
+                            break;
+
+                        }
+
+
+                }
+
+            }
         }
         else
         {
