@@ -23,6 +23,36 @@ public class TestControls : MonoBehaviour {
         float translation = Input.GetAxis("Vertical") * speed;      
         translation *= Time.deltaTime;   
         transform.Translate(0, 0, translation);
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Debug.Log("The Player has attacked");
+            anim.SetBool("isAttacking", true);
+            anim.SetBool("isIdle", false);
+        }
+        else
+        {
+
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("isIdle", true);
+        }
+
+
+        if(Input.GetMouseButtonDown(1))
+        {
+
+            anim.SetBool("isBlocking",true);
+            
+       }
+
+        else
+        {
+            anim.SetBool("isBlocking", false);
+            anim.SetBool("isIdle", true);
+        }
+
      
          if (Input.GetButtonDown("Jump"))
         {
