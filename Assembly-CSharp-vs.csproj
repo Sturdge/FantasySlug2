@@ -83,6 +83,7 @@
      <Compile Include="Assets\scripts\player\JumpState.cs" />
      <Compile Include="Assets\scripts\player\MoveState.cs" />
      <Compile Include="Assets\scripts\player\StatePatternPlayer.cs" />
+     <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Hand painted bottle\readme.txt" />
      <None Include="Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
