@@ -11,7 +11,7 @@ public class LivesManager : MonoBehaviour {
     void Awake()
     {
         livesText = GetComponent<GUIText>(); // Get the text that will be displayed on screen. 
-        lives = 5; // Score is set to 0
+        lives = 5; // lives is set to 0
 
 
     }

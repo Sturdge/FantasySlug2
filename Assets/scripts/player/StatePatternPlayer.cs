@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class StatePatternPlayer : MonoBehaviour {
 
     [HideInInspector]
@@ -71,7 +72,7 @@ public class StatePatternPlayer : MonoBehaviour {
         if (other.tag == "Death")
         {
             Debug.Log("You have fallen to your death");
-
+            Application.LoadLevel(Application.loadedLevel);
 
         }
     }
