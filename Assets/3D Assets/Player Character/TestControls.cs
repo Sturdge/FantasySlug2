@@ -22,7 +22,7 @@ public class TestControls : MonoBehaviour {
 
 
         
-        float translation = Input.GetAxis("Vertical") * speed;      
+        float translation = Input.GetAxis("Horizontal") * speed;      
         translation *= Time.deltaTime;   
         transform.Translate(0, 0, translation);
 
@@ -109,7 +109,7 @@ public class TestControls : MonoBehaviour {
 
 
 
-        if(translation != 0)
+        if (translation > 0)
         {
             anim.SetBool("isRunning", true);
             anim.SetBool("isIdle", false);
@@ -123,5 +123,21 @@ public class TestControls : MonoBehaviour {
         }
 
 
-	}
+
+
+
+            if (translation < 0)
+            {
+                anim.SetBool("isRunningBackwards", true);
+                anim.SetBool("isIdle", false);
+
+
+            }
+            else
+            {
+                anim.SetBool("isRunningBackwards", false);
+                anim.SetBool("isIdle", true);
+            }
+        
+    }
 }

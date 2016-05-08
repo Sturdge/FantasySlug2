@@ -15,6 +15,7 @@ public class Mainmenu : MonoBehaviour {
     public Camera levelSelect;
     public string level1;
     public string Tutorial;
+    bool isMute;
    
 	// Use this for initialization
 	void Start()
@@ -32,6 +33,29 @@ public class Mainmenu : MonoBehaviour {
         
     }
 
+
+    public void lowerQuality()
+    {
+
+        QualitySettings.DecreaseLevel(true);
+    }
+
+    public void raiseQuality()
+    {
+
+        QualitySettings.IncreaseLevel(true);
+
+    }
+
+
+    public void Mute()
+    {
+        isMute = !isMute;
+        AudioListener.volume = isMute ? 0 : 1;
+
+
+
+    }
     public void Options()
     {
         options.enabled = true;
