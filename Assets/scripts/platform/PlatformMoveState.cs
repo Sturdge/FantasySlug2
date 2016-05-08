@@ -5,6 +5,8 @@ public class PlatformMoveState : IPlatformState {
 
 	private readonly StatePatternPlatform platform;
 
+    bool raycasting;
+
     public PlatformMoveState (StatePatternPlatform statePatternPlatform)
     {
 
@@ -15,7 +17,10 @@ public class PlatformMoveState : IPlatformState {
     public void updateState()
     {
 
-        if (checkPlayerAbove ()) {
+        if (checkPlayerAbove ()) 
+        {
+
+            raycasting = false;
 
 			switch (platform.platformType) {
 
@@ -47,10 +52,15 @@ public class PlatformMoveState : IPlatformState {
     public bool checkPlayerAbove()
     {
 
-		if(Physics.Raycast(platform.transform.position, Vector3.up, 5))
-			return true;
-		else
-			return false;
+        if(raycasting)
+        { 
+		    if(Physics.Raycast(platform.transform.position, Vector3.up, 5))
+			    return true;
+		    else
+			    return false;
+        }
+
+        return false;
 
     }
 

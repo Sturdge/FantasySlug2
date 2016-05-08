@@ -49,11 +49,12 @@ public class StatePatternPlayer : MonoBehaviour {
       
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         currentState.updateState();
         checkGround();
+        Debug.Log(currentState);
 
     }
 

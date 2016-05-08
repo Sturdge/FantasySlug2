@@ -53,9 +53,9 @@ public class MoveState : IPlayerState {
     {
 
         if( Input.GetKey(KeyCode.A) )
-            player.GetComponent<Rigidbody>().MovePosition( player.transform.position - player.transform.right * Time.deltaTime * 5);
+            player.GetComponent<Rigidbody>().MovePosition( player.transform.position - player.transform.forward * Time.deltaTime * 5);
         else if( Input.GetKey(KeyCode.D) )
-            player.GetComponent<Rigidbody>().MovePosition(player.transform.position + player.transform.right * Time.deltaTime * 5);
+            player.GetComponent<Rigidbody>().MovePosition(player.transform.position + player.transform.forward * Time.deltaTime * 5);
 
         if (Input.GetKeyUp(KeyCode.A))
             toIdleState();
