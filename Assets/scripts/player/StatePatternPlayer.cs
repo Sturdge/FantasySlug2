@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
 public class StatePatternPlayer : MonoBehaviour {
@@ -25,9 +26,10 @@ public class StatePatternPlayer : MonoBehaviour {
     public float jumpforce;
 
     public static int health;
-    public static int mana;
+    public static float mana;
     public static int level;
-   
+    public Image manabar;
+    float manabarFill;
 
     private void Awake()
     {
@@ -52,10 +54,11 @@ public class StatePatternPlayer : MonoBehaviour {
 
     void Update()
     {
-
+        manabarFill = mana / 100 ;
         currentState.updateState();
         checkGround();
-
+        Debug.Log("mana is" + mana);
+        manabar.fillAmount = manabarFill;
     }
 
     void checkGround()

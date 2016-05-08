@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class TestControls : MonoBehaviour {
 
@@ -9,26 +10,30 @@ public class TestControls : MonoBehaviour {
     int attackvalue;
     public GameObject fireBall;
     public Transform fireBallSpawn;
+    private int manacost;
 
 	// Use this for initialization
 	void Start () {
 
-
+       
         anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+      
 
         if(Input.GetMouseButtonDown(2))
         {
 
-
-            anim.SetTrigger("isCasting");
-            Instantiate(fireBall, fireBallSpawn.position, fireBallSpawn.rotation);
-
-
+            if (StatePatternPlayer.mana > 10)
+            {
+                anim.SetTrigger("isCasting");
+                Instantiate(fireBall, fireBallSpawn.position, fireBallSpawn.rotation);
+                manacost = 10;
+                StatePatternPlayer.mana -= 10;
+            }
         }
         
         float translation = Input.GetAxis("Horizontal") * speed;      
