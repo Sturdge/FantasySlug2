@@ -7,29 +7,29 @@ public class StatePatternEnemy : MonoBehaviour {
     public IEnemyState currentState;
 
     [HideInInspector]
-    public EnemyIdleState idleState;
+    //public EnemyIdleState idleState;
 
-    [HideInInspector]
-    public EnemyAttackState attackState;
+   // [HideInInspector]
+  //  public EnemyAttackState attackState;
 
-    [HideInInspector]
-    public EnemyMoveState moveState;
+   // [HideInInspector]
+   // public EnemyMoveState moveState;
 
     private void Awake()
     {
 
-        idleState = new EnemyIdleState(this);
+     //   idleState = new EnemyIdleState(this);
 
-        moveState = new EnemyMoveState(this);
+      //  moveState = new EnemyMoveState(this);
 
-        attackState = new EnemyAttackState(this);
+       // attackState = new EnemyAttackState(this);
 
     }
 
     void Start()
     {
 
-        currentState = idleState;
+       // currentState = idleState;
 
     }
 

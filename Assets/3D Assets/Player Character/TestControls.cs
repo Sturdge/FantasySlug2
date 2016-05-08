@@ -122,22 +122,28 @@ public class TestControls : MonoBehaviour {
             anim.SetBool("isIdle", true);
         }
 
-
-
-
-
             if (translation < 0)
             {
-                anim.SetBool("isRunningBackwards", true);
+
+
+            
+                anim.SetBool("isRunningBack", true);
                 anim.SetBool("isIdle", false);
 
 
             }
             else
             {
-                anim.SetBool("isRunningBackwards", false);
+                anim.SetBool("isRunningBack", false);
                 anim.SetBool("isIdle", true);
             }
         
+           if(Input.GetKeyDown("a"))
+        {
+
+                transform.Rotate(new Vector3(0, 180, 0));
+               transform.Translate(0, 0, -translation);
+
+        }
     }
 }
