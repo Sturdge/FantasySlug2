@@ -25,11 +25,15 @@ public class StatePatternPlayer : MonoBehaviour {
 
     public float jumpforce;
 
-    public static int health;
+    public static float health;
     public static float mana;
+    public static float XP;
     public static int level;
     public Image manabar;
+    public Image xpBar;
     float manabarFill;
+    float healthbarFill;
+    float xpBarFill;
 
     private void Awake()
     {
@@ -49,16 +53,20 @@ public class StatePatternPlayer : MonoBehaviour {
         health = 75;
         mana = 75;
         level = 01;
+        XP = 1;
+        
       
     }
 
     void Update()
     {
+        xpBarFill = XP / 100;
         manabarFill = mana / 100 ;
         currentState.updateState();
         checkGround();
         Debug.Log("mana is" + mana);
         manabar.fillAmount = manabarFill;
+        xpBar.fillAmount = xpBarFill;
     }
 
     void checkGround()
