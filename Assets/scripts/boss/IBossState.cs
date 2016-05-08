@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface IBossState {
+public interface IBossState 
+{
 
     void updateState();
 
