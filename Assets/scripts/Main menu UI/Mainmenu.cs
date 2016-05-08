@@ -3,16 +3,16 @@ using System.Collections;
 
 public class Mainmenu : MonoBehaviour {
 
-    public PlayerCamera mainMenu;
-    public PlayerCamera options;
-    public PlayerCamera highscore;
-    public PlayerCamera Credits;
+    public Camera mainMenu;
+    public Camera options;
+    public Camera highscore;
+    public Camera Credits;
     public GameObject mainMenuCanvas;
     public GameObject optionsCanvas;
     public GameObject highScoreCanvas;
     public GameObject levelSelectCanvas;
     public GameObject creditsScreenCanvas;
-    public PlayerCamera levelSelect;
+    public Camera levelSelect;
     public string level1;
     public string Tutorial;
     bool isMute;

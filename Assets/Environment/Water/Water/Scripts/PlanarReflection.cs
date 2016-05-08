@@ -16,9 +16,9 @@ namespace UnityStandardAssets.Water
 
 
         Vector3 m_Oldpos;
-        PlayerCamera m_ReflectionCamera;
+        Camera m_ReflectionCamera;
         Material m_SharedMaterial;
-        Dictionary<PlayerCamera, bool> m_HelperCameras;
+        Dictionary<Camera, bool> m_HelperCameras;
 
 
         public void Start()
@@ -27,20 +27,20 @@ namespace UnityStandardAssets.Water
         }
 
 
-        PlayerCamera CreateReflectionCameraFor(PlayerCamera cam)
+        Camera CreateReflectionCameraFor(Camera cam)
         {
             String reflName = gameObject.name + "Reflection" + cam.name;
             GameObject go = GameObject.Find(reflName);
 
             if (!go)
             {
-                go = new GameObject(reflName, typeof(PlayerCamera));
+                go = new GameObject(reflName, typeof(Camera));
             }
-            if (!go.GetComponent(typeof(PlayerCamera)))
+            if (!go.GetComponent(typeof(Camera)))
             {
-                go.AddComponent(typeof(PlayerCamera));
+                go.AddComponent(typeof(Camera));
             }
-            PlayerCamera reflectCamera = go.GetComponent<PlayerCamera>();
+            Camera reflectCamera = go.GetComponent<Camera>();
 
             reflectCamera.backgroundColor = clearColor;
             reflectCamera.clearFlags = reflectSkybox ? CameraClearFlags.Skybox : CameraClearFlags.SolidColor;
@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Water
         }
 
 
-        void SetStandardCameraParameter(PlayerCamera cam, LayerMask mask)
+        void SetStandardCameraParameter(Camera cam, LayerMask mask)
         {
             cam.cullingMask = mask & ~(1 << LayerMask.NameToLayer("Water"));
             cam.backgroundColor = Color.black;
@@ -64,7 +64,7 @@ namespace UnityStandardAssets.Water
         }
 
 
-        RenderTexture CreateTextureFor(PlayerCamera cam)
+        RenderTexture CreateTextureFor(Camera cam)
         {
             RenderTexture rt = new RenderTexture(Mathf.FloorToInt(cam.pixelWidth * 0.5F),
                 Mathf.FloorToInt(cam.pixelHeight * 0.5F), 24);
@@ -73,11 +73,11 @@ namespace UnityStandardAssets.Water
         }
 
 
-        public void RenderHelpCameras(PlayerCamera currentCam)
+        public void RenderHelpCameras(Camera currentCam)
         {
             if (null == m_HelperCameras)
             {
-                m_HelperCameras = new Dictionary<PlayerCamera, bool>();
+                m_HelperCameras = new Dictionary<Camera, bool>();
             }
 
             if (!m_HelperCameras.ContainsKey(currentCam))
@@ -109,7 +109,7 @@ namespace UnityStandardAssets.Water
         }
 
 
-        public void WaterTileBeingRendered(Transform tr, PlayerCamera currentCam)
+        public void WaterTileBeingRendered(Transform tr, Camera currentCam)
         {
             RenderHelpCameras(currentCam);
 
@@ -134,7 +134,7 @@ namespace UnityStandardAssets.Water
         }
 
 
-        void RenderReflectionFor(PlayerCamera cam, PlayerCamera reflectCamera)
+        void RenderReflectionFor(Camera cam, Camera reflectCamera)
         {
             if (!reflectCamera)
             {
@@ -203,7 +203,7 @@ namespace UnityStandardAssets.Water
         }
 
 
-        void SaneCameraSettings(PlayerCamera helperCam)
+        void SaneCameraSettings(Camera helperCam)
         {
             helperCam.depthTextureMode = DepthTextureMode.None;
             helperCam.backgroundColor = Color.black;
@@ -271,7 +271,7 @@ namespace UnityStandardAssets.Water
         }
 
 
-        Vector4 CameraSpacePlane(PlayerCamera cam, Vector3 pos, Vector3 normal, float sideSign)
+        Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
         {
             Vector3 offsetPos = pos + normal * clipPlaneOffset;
             Matrix4x4 m = cam.worldToCameraMatrix;
