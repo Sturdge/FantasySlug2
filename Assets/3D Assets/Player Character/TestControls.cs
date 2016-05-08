@@ -7,7 +7,8 @@ public class TestControls : MonoBehaviour {
     static Animator anim;
     public float speed = 10.0f;
     int attackvalue;
-    
+    public GameObject fireBall;
+    public Transform fireBallSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,15 @@ public class TestControls : MonoBehaviour {
 	void Update () {
 
 
+        if(Input.GetMouseButtonDown(2))
+        {
 
+
+            anim.SetTrigger("isCasting");
+            Instantiate(fireBall, fireBallSpawn.position, fireBallSpawn.rotation);
+
+
+        }
         
         float translation = Input.GetAxis("Horizontal") * speed;      
         translation *= Time.deltaTime;   
