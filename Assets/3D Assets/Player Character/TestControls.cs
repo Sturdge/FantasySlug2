@@ -136,21 +136,7 @@ public class TestControls : MonoBehaviour {
             anim.SetBool("isIdle", true);
         }
 
-            if (translation < 0)
-            {
-
-
-            
-                anim.SetBool("isRunningBack", true);
-                anim.SetBool("isIdle", false);
-
-
-            }
-            else
-            {
-                anim.SetBool("isRunningBack", false);
-                anim.SetBool("isIdle", true);
-            }
+    
         
            if(Input.GetKeyDown("a"))
         {

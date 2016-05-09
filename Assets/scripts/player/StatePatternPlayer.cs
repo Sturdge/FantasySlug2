@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class StatePatternPlayer : MonoBehaviour {
+public class StatePatternPlayer : MonoBehaviour
+{
 
     [HideInInspector]
     public IPlayerState currentState;
@@ -17,11 +18,11 @@ public class StatePatternPlayer : MonoBehaviour {
     [HideInInspector]
     public AttackState attackState;
 
-	[HideInInspector]
-	public Rigidbody rigid;
+    [HideInInspector]
+    public Rigidbody rigid;
 
-	[HideInInspector]
-	public bool jumping;
+    [HideInInspector]
+    public bool jumping;
 
     public float jumpforce;
 
@@ -34,6 +35,8 @@ public class StatePatternPlayer : MonoBehaviour {
     float manabarFill;
     float healthbarFill;
     float xpBarFill;
+    public GameObject winMenu;
+    public string backToMenu;
 
     private void Awake()
     {
@@ -41,8 +44,8 @@ public class StatePatternPlayer : MonoBehaviour {
         idleState = new IdleState(this);
         moveState = new MoveState(this);
         attackState = new AttackState(this);
-		rigid = GetComponent<Rigidbody> ();
-		jumping = false;
+        rigid = GetComponent<Rigidbody>();
+        jumping = false;
 
     }
 
@@ -54,17 +57,17 @@ public class StatePatternPlayer : MonoBehaviour {
         mana = 75;
         level = 01;
         XP = 1;
-        
-      
+        winMenu.SetActive(false);
+
     }
 
     void Update()
     {
         xpBarFill = XP / 100;
-        manabarFill = mana / 100 ;
+        manabarFill = mana / 100;
         currentState.updateState();
         checkGround();
-        Debug.Log("mana is" + mana);
+
         manabar.fillAmount = manabarFill;
         xpBar.fillAmount = xpBarFill;
     }
@@ -78,7 +81,7 @@ public class StatePatternPlayer : MonoBehaviour {
     }
 
 
-    void OnTriggerEnter( Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Death")
         {
@@ -86,7 +89,38 @@ public class StatePatternPlayer : MonoBehaviour {
             Application.LoadLevel(Application.loadedLevel);
 
         }
+
+        if (other.tag == "Win")
+        {
+           
+            Debug.Log("You have beat the level");
+            winMenu.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
+        else // otherwise
+        {
+            Time.timeScale = 1.0f; // unpause the game
+           winMenu.SetActive(false); // get rid of the pause menu. 
+        }
     }
 
 
+    public void WinBackToMenuButton()
+    {
+        Time.timeScale = 1.0f;
+        Application.LoadLevel(backToMenu);
+
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+
+
+    }
 }
+
+    
+
+
+
