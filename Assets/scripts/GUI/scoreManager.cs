@@ -4,6 +4,7 @@ using System.Collections;
 public class scoreManager : MonoBehaviour {
 
     public static int score; // Create a public static int to hold the score.
+    public static int Highscore = 0;
 
     public GUIText scoreText; // Public GUIText to hold the on screen text. 
 
@@ -19,7 +20,7 @@ public class scoreManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -29,6 +30,6 @@ public class scoreManager : MonoBehaviour {
 
         scoreText.text = "score " + score + ""; // Set the text to be displayed on screen, 
 
-
+       
     }
 }

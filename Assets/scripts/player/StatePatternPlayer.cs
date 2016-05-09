@@ -37,6 +37,7 @@ public class StatePatternPlayer : MonoBehaviour
     float xpBarFill;
     public GameObject winMenu;
     public string backToMenu;
+    public GameObject Player;
 
     private void Awake()
     {
@@ -70,6 +71,13 @@ public class StatePatternPlayer : MonoBehaviour
 
         manabar.fillAmount = manabarFill;
         xpBar.fillAmount = xpBarFill;
+
+        if(LivesManager.lives == 0)
+        {
+
+            Application.LoadLevel(backToMenu);
+
+        }
     }
 
     void checkGround()
@@ -84,26 +92,47 @@ public class StatePatternPlayer : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Death")
-        {
-            Debug.Log("You have fallen to your death");
-            Application.LoadLevel(Application.loadedLevel);
+        {  LivesManager.lives -= 1;
+            if (LivesManager.lives == 0)
+            {
 
+                Application.LoadLevel(backToMenu);
+
+            }
+            else
+            {
+
+                  transform.position = new Vector3(3, 2, 0);   
+
+            }
+
+            Debug.Log("You have fallen to your death");               
+           
+            Debug.Log("Highscore is" + scoreManager.Highscore);
+                            
+                          
+
+
+            
+           
         }
 
         if (other.tag == "Win")
         {
-           
+            Time.timeScale = 0.0f;
+            
             Debug.Log("You have beat the level");
             winMenu.SetActive(true);
-            Time.timeScale = 0.0f;
+          
         }
         else // otherwise
         {
             Time.timeScale = 1.0f; // unpause the game
-           winMenu.SetActive(false); // get rid of the pause menu. 
+            winMenu.SetActive(false); // get rid of the pause menu. 
         }
     }
 
+    
 
     public void WinBackToMenuButton()
     {
