@@ -5,6 +5,18 @@ public class Invincibility : MonoBehaviour
 {
 
     public GameObject InvincibilityPickUp;
+    static public bool pickedup = false;
+   
+
+    void Start()
+    {
+
+    
+
+    }
+
+   
+    
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
@@ -12,11 +24,17 @@ public class Invincibility : MonoBehaviour
 
             if (InvincibilityPickUp.tag == "Invin")
             {
-                Debug.Log("player has picked up Invincibility buff");
-                Debug.Log("The players is now invincible for 5 secs");
-                Destroy(gameObject);
+                pickedup = true;
+                transform.position = new Vector3(200, 200, 200);
+                                            
+                }
             }
         }
+      
     }
-}
+
+   
+
+    
+
 
