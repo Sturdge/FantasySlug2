@@ -4,7 +4,7 @@ using System.Collections;
 public interface IEnemyState
 {
 
-    void updateState();
+    void Update();
 
     void toIdleState();
 

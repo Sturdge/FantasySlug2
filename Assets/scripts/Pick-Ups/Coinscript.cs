@@ -9,6 +9,7 @@ public class Coinscript : MonoBehaviour {
         {
             Debug.Log("The player has picked up a coin");
             scoreManager.score += pointsGained; // add the pointsGained to the score. 
+            StatePatternPlayer.XP += 1;
             Destroy(gameObject);
 
         }
