@@ -5,16 +5,23 @@ public class AttackState : IPlayerState {
 
 	private readonly StatePatternPlayer player;
 
+    private float timer;
+
     public AttackState (StatePatternPlayer statePatternPlayer)
     {
 
         player = statePatternPlayer;
+
+        timer = 0;
 
     }
 
     public void updateState()
     {
 
+        //animation
+        if (!player.GetComponent<Animator>().GetBool("isAttacking"));
+            toIdleState();
 
     }
 

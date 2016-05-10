@@ -3,6 +3,9 @@ using System.Collections;
 
 public class StatePatternEnemy : MonoBehaviour {
 
+    [SerializeField]
+    private int hp;
+
     [HideInInspector]
     public IEnemyState currentState;
 
@@ -38,8 +41,22 @@ public class StatePatternEnemy : MonoBehaviour {
 
         currentState.updateState();
 
-        print(currentState);
+        print(hp);
         
+    }
+
+    void OnTriggerEnter( Collider other )
+    {
+
+        if (other.tag == "Sword" && GameObject.FindGameObjectWithTag("Player").GetComponent<StatePatternPlayer>().currentState == GameObject.FindGameObjectWithTag("Player").GetComponent<StatePatternPlayer>().attackState)
+        {
+
+            if (hp > 0)
+                hp -= 1;
+            else
+                Destroy(this.gameObject);
+        }
+
     }
 
 }
