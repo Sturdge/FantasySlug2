@@ -3,33 +3,59 @@ using System.Collections;
 
 public class StatePatternEnemy : MonoBehaviour {
 
+    [SerializeField]
+    private int hp;
+
     [HideInInspector]
     public IEnemyState currentState;
 
     [HideInInspector]
-    //public EnemyIdleState idleState;
+    public EnemyIdleState idleState;
 
-   // [HideInInspector]
-  //  public EnemyAttackState attackState;
+   [HideInInspector]
+    public EnemyAttackState attackState;
 
-   // [HideInInspector]
-   // public EnemyMoveState moveState;
+   [HideInInspector]
+   public EnemyMoveState moveState;
 
     private void Awake()
     {
 
-     //   idleState = new EnemyIdleState(this);
+        idleState = new EnemyIdleState(this);
+        
+        moveState = new EnemyMoveState(this);
 
-      //  moveState = new EnemyMoveState(this);
-
-       // attackState = new EnemyAttackState(this);
+        attackState = new EnemyAttackState(this);
 
     }
 
     void Start()
     {
 
-       // currentState = idleState;
+       currentState = idleState;
+
+    }
+
+    void Update()
+    {
+
+        currentState.updateState();
+
+        print(hp);
+        
+    }
+
+    void OnTriggerEnter( Collider other )
+    {
+
+        if (other.tag == "Sword" && GameObject.FindGameObjectWithTag("Player").GetComponent<StatePatternPlayer>().currentState == GameObject.FindGameObjectWithTag("Player").GetComponent<StatePatternPlayer>().attackState)
+        {
+
+            if (hp > 0)
+                hp -= 1;
+            else
+                Destroy(this.gameObject);
+        }
 
     }
 

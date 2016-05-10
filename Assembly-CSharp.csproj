@@ -75,6 +75,9 @@
      <Compile Include="Assets\scripts\boss\BossSpecialState.cs" />
      <Compile Include="Assets\scripts\boss\IBossState.cs" />
      <Compile Include="Assets\scripts\boss\StatePatternBoss.cs" />
+     <Compile Include="Assets\scripts\enemy\EnemyAttackState.cs" />
+     <Compile Include="Assets\scripts\enemy\EnemyIdleState.cs" />
+     <Compile Include="Assets\scripts\enemy\EnemyMoveState.cs" />
      <Compile Include="Assets\scripts\enemy\IEnemyState.cs" />
      <Compile Include="Assets\scripts\enemy\StatePatternEnemy.cs" />
      <Compile Include="Assets\scripts\platform\IPlatformState.cs" />
