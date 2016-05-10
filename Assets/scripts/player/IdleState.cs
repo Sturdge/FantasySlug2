@@ -55,8 +55,8 @@ public class IdleState : IPlayerState {
             toMoveState();
         else if (Input.GetKey(KeyCode.Space))
             toMoveState();
-        else if (Input.GetMouseButtonDown(0))
-            toAttackState();
+        //else if (Input.GetMouseButtonDown(0))
+            //toAttackState();
 
     }
 
