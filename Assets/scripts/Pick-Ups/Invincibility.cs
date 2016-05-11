@@ -4,8 +4,8 @@ using System.Collections;
 public class Invincibility : MonoBehaviour
 {
 
-    public GameObject InvincibilityPickUp;
-    static public bool pickedup = false;
+    public GameObject InvincibilityPickUp; // Holds the invincibility pick up. 
+    static public bool pickedup = false; // has the player picked up the invincibility. 
    
 
     void Start()
@@ -17,15 +17,15 @@ public class Invincibility : MonoBehaviour
 
    
     
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col) // if an object collides with the invincibility buff.
     {
-        if (col.tag == "Player")
+        if (col.tag == "Player") // And its the player.
         {
 
             if (InvincibilityPickUp.tag == "Invin")
             {
-                pickedup = true;
-                transform.position = new Vector3(200, 200, 200);
+                pickedup = true; // The player has picked up the buff.
+                transform.position = new Vector3(200, 200, 200); // Move the buff out of view. 
                                             
                 }
             }

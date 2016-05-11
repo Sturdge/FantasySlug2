@@ -4,7 +4,7 @@ using System.Collections;
 public class scoreManager : MonoBehaviour {
 
     public static int score; // Create a public static int to hold the score.
-    public static int Highscore = 0;
+    public static int Highscore = 0; // int to hold the highscore. 
 
     public GUIText scoreText; // Public GUIText to hold the on screen text. 
 

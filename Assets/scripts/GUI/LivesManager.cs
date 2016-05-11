@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LivesManager : MonoBehaviour {
 
-    public static int lives; // Create a public static int to hold the score.
+    public static int lives; // Create a public static int to hold the lives of the player. 
 
     public GUIText livesText; // Public GUIText to hold the on screen text. 
 
@@ -11,7 +11,7 @@ public class LivesManager : MonoBehaviour {
     void Awake()
     {
         livesText = GetComponent<GUIText>(); // Get the text that will be displayed on screen. 
-        lives = 5; // lives is set to 0
+        lives = 5; // lives is set to 5
 
 
     }

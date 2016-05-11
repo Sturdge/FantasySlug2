@@ -60,7 +60,7 @@ public class StatePatternEnemy : MonoBehaviour
                 Destroy(this.gameObject);
         }
 
-
+       
         if (other.tag == "Fireball" && GameObject.FindGameObjectWithTag("Player").GetComponent<StatePatternPlayer>().currentState == GameObject.FindGameObjectWithTag("Player").GetComponent<StatePatternPlayer>().attackState)
         {
 
@@ -70,6 +70,7 @@ public class StatePatternEnemy : MonoBehaviour
                 Destroy(this.gameObject);
 
         }
+
 
     }
 }
