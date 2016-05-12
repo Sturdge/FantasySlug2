@@ -58,6 +58,7 @@
      <Compile Include="Assets\scripts\GUI\Iconmanager.cs" />
      <Compile Include="Assets\scripts\GUI\LevelManager.cs" />
      <Compile Include="Assets\scripts\GUI\LivesManager.cs" />
+     <Compile Include="Assets\scripts\GUI\instructionsmenu.cs" />
      <Compile Include="Assets\scripts\GUI\scoreManager.cs" />
      <Compile Include="Assets\scripts\Level scripts\PauseFunction.cs" />
      <Compile Include="Assets\scripts\Main menu UI\Mainmenu.cs" />
