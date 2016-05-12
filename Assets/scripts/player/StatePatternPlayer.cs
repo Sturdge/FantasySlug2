@@ -37,6 +37,7 @@ public class StatePatternPlayer : MonoBehaviour
     float xpBarFill; // used to hold the fill level of the XP bar
     public GameObject winMenu; // Hold the menu that appears when the player wins the game.
     public string backToMenu; // Holds the string of the main menu scene which will load when a back to menu button is pressed.
+    public string deathscreen; // Holds the string of the death screen scene which will load when the player dies. 
     public GameObject Player; // Used to hold the player gameobject. 
     // End SID: 1311554 
 
@@ -102,7 +103,7 @@ public class StatePatternPlayer : MonoBehaviour
             if (LivesManager.lives == 0) // If the player runs out of lives.
             {
 
-                Application.LoadLevel(backToMenu); // load the main menu.
+                Application.LoadLevel(deathscreen); // load the main menu.
 
             }
             else //Otherwise
