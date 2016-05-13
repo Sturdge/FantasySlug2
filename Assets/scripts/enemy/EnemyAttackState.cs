@@ -2,18 +2,20 @@
 using System.Collections;
 
 public class EnemyAttackState : IEnemyState {
-
+    public static int damage = 1;
     private readonly StatePatternEnemy enemy;
 
     private float timer;
 
     private Vector3 playerPos;
-
-    [SerializeField]
     private int attackDelay;
+    [SerializeField]
+   
+  
 
     public EnemyAttackState ( StatePatternEnemy statePatternEnemy )
     {
+        attackDelay = 100;
 
         enemy = statePatternEnemy;
 
@@ -43,7 +45,7 @@ public class EnemyAttackState : IEnemyState {
             }
             else
             {
-
+                StatePatternPlayer.health -= damage;
                 //attack animation
 
                 timer = 0;

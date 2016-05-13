@@ -28,6 +28,7 @@ public class Iconmanager : MonoBehaviour
             invtimer += Time.deltaTime; // start the timer. 
             Debug.Log(invtimer);
             Debug.Log(Invincibility.pickedup);
+            EnemyAttackState.damage = 0; // The player cant take any damage from enemies.
             invIcon.SetActive(true); // make the icon display.
         }
 
@@ -37,6 +38,7 @@ public class Iconmanager : MonoBehaviour
             if(invtimer >= invMaxTime) // when invincibility has run its duration. 
             {
 
+            EnemyAttackState.damage = 1;
                 invIcon.SetActive(false); // turn of the icon.
                 Invincibility.pickedup = false; // the player has no longer picked up invincibility. 
                 invtimer = 0; // reset the timer. 

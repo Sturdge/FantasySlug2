@@ -22,8 +22,9 @@ public class Mainmenu : MonoBehaviour {
     {
         mainMenu.enabled = true; // main menu camera is turned on.
         mainMenuCanvas.SetActive(true); // main menu canvas is showing. 
-
+        Application.targetFrameRate = 60;
         // All over cameras and canvas are turned off.
+        Screen.SetResolution(1024, 768, false, 60);
         options.enabled = false;
         optionsCanvas.SetActive(false);      
         highscore.enabled = false;
